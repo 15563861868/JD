@@ -32,7 +32,11 @@ class Cart {
             // 这里的条件是，item.id是goods中的id，如果cartGoods中有这个id，就是符合条件，返回goods中对应的元素；
             // 如果item.id=1，进入filter，如果cartGoods里面有键为1，就会返回一个值（数字），转化为布尔值就是true，如果没有就返回undefined，转为false。
         })
-        this.render(now, cartGoods)
+        this.render(now, cartGoods);
+        this.delChecked();
+        this.one();
+        this.deleteAll();
+        // 如果写在constructor中，获取不到节点，因为getGoods获取了数据以后就执行del，还没有渲染到节点，所以在del中没办法获取节点  异步问题
     }
     render(now, cartGoods) {
         let html = '';
@@ -153,7 +157,7 @@ class Cart {
             btn: ['取消', '确认'],
             btn2: function (index, layero) {
                 tr.remove();
-                tr.querySelector('.j-checkbox').checked && that.subTotal();
+                tr.querySelector('.j-checkbox').checked && that.sumTotal();
             }
         });
         this.modify(tr.getAttribute('good-id'));
@@ -174,6 +178,72 @@ class Cart {
     }
     $$(ele) {
         return document.querySelectorAll(ele)
+    }
+
+    delChecked(){
+        let btn=this._$('.remove-batch');
+        // console.log(btn);
+        // console.log(checkOne);
+        // let tr=checkOne.parentNode.parentNode;
+        // 节点集合不能获取父级
+        let that=this;
+        // 这里可以给选中的节点加一个类名，然后点击按钮时，删除有这个类名的节点。
+        btn.onclick=()=>{
+                layer.open({
+                    title: '确认删除框',
+                    content: '确认删除选中商品?',
+                    btn: ['取消', '确认'],
+                    btn2: function (index, layero) {
+                        that.select();
+                        that.sumTotal();
+                    }
+                });
+            }
+    }
+
+    select(){
+        let select=document.querySelectorAll('.select');
+                        select.forEach(item=>{
+                            item.parentNode.parentNode.remove();
+                            this.modify(item.parentNode.parentNode.getAttribute('good-id'));
+                        })
+    }
+    one(){
+        let checkOne=this.$$('.cart-item-list .j-checkbox');
+        for(let i=0;i<checkOne.length;i++){
+            checkOne[i].onclick=()=>{
+                if(checkOne[i].checked==true){
+                    checkOne[i].classList.add('select');
+                }else{
+                    checkOne[i].classList.remove('select');
+                }
+            }
+        }
+    }
+
+    deleteAll(){
+        let that=this;
+        let del=document.querySelector('.clear-all');
+        // let check=document.querySelectorAll('.j-checkbox');
+        del.onclick=()=>{
+            layer.open({
+                title: '确认删除框',
+                content: '确认删除全部商品?',
+                btn: ['取消', '确认'],
+                btn2: function (index, layero) {
+                    that.all();
+                    that.sumTotal();
+                }
+            });
+        }
+    }
+
+    all(){
+        let info=document.querySelectorAll('.cart-item');
+        info.forEach(item=>{
+            item.remove();
+            this.modify(item.getAttribute('good-id'));
+        })
     }
 }
 new Cart;

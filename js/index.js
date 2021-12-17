@@ -113,7 +113,7 @@
 //  倒计时
 setInterval(time,1000);
 function time(){
-    let endDate=new Date('2021-12-16 18:00:00').getTime();
+    let endDate=new Date('2021-12-24 18:00:00').getTime();
     // 现在的时间
     let nowTime=new Date().getTime();
     // 总秒数
