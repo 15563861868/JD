@@ -390,8 +390,6 @@
 .nav_tab .item_toatl_msg {
   display: none;
   z-index: 9;
-  width: 1000px;
-  height: 500px;
 }
 .nav_tab .total {
   height: 40px;
@@ -703,31 +701,15 @@
   width: 450px;
   height: 450px;
 }
-.product_details .left .mid_photo div{
-  width: 450px;
-  height: 450px;
-  position: absolute;
-  display: none;
-}
-/* .product_details .left .mid_photo div .mid_img {
+.product_details .left .mid_photo .mid_img {
   display: none;
   position: absolute;
   top: 0;
   left: 0;
-  width: 450px;
-  height: 450px;
-} */
-.product_details .left .mid_photo div .mid_img {
- width: 100%;
- height: 100%;
 }
-.product_details .left .mid_photo .big-photo div {
+.product_details .left .mid_photo .big_img {
   display: none;
 }
-
-/* .product_details .left .mid_photo div .big_img {
-  display: none;
-} */
 .product_details .left .mid_photo .mask {
   display: none;
   position: absolute;
@@ -748,9 +730,6 @@
   height: 30px;
   background: url(../images/shop_goods/sprite-1.png) 0 -24px;
 }
-.liActive img{
-  border: 1px solid red;
-}
 .product_details .left .mid_photo .big_photo {
   display: none;
   position: absolute;
@@ -762,22 +741,17 @@
   border: 1px solid #ccc;
   overflow: hidden;
 }
-.product_details .left .mid_photo .big_photo div{
+.product_details .left .mid_photo .big_photo .big_img {
+  width: 800px;
+  height: 800px;
   position: absolute;
   top: 0;
   left: 0;
-  width: 800px;
-  height: 800px;
-}
-.product_details .left .mid_photo .big_photo .big_img {
-  width: 100%;
-  height: 100%;
 }
 .product_details .left .preview_list {
   width: 450px;
   height: 54px;
   margin-top: 20px;
-  position:relative;
 }
 .product_details .left .preview_list .arrow_prev,
 .product_details .left .preview_list .arrow_next {
@@ -787,15 +761,10 @@
   margin-top: 10px;
   cursor: pointer;
   background: url(../images/shop_goods/sprite-1.png) -78px 0;
-  position: absolute;
 }
 .product_details .left .preview_list .arrow_prev {
   background: url(../images/shop_goods/sprite-1.png) 0 -54px;
 }
-.product_details .left .preview_list .arrow_next {
-  left:428px;
-}
-
 .product_details .left .preview_list .item_cur {
   border: 2px solid #b1191a;
 }
@@ -803,38 +772,19 @@
   float: left;
   display: flex;
   width: 400px;
-  height: 56px;
   overflow: hidden;
-  position: absolute;
-  left: 22px;
 }
 .product_details .left .preview_list .list_item .list_item_menu {
   width: 400px;
   display: flex;
-  position: absolute;
-  margin-left: 13px;
-}
-.product_details .left .preview_list .list_item .list_item_menu:nth-child(1){
-  display: show;
-}
-.product_details .left .preview_list .list_item .list_item_menu:nth-child(2){
-  display: none;
 }
 .product_details .left .preview_list .list_item .list_item_menu .tab_current {
   border: 1px solid #b1191a;
 }
 .product_details .left .preview_list .list_item .list_item_menu li {
   width: 80px;
-  /* height: 56px; */
-  /* margin-left: 13px;
-  margin-right: 13px; */
-  float: left;
-}
-.product_details .left .preview_list .list_item .list_item_menu li img{
-  width: 54px;
-  height: 54px;
   margin-right: 13px;
-  margin-right: 13px;
+  margin-left: 13px;
 }
 .product_details .left .guanzhu,
 .product_details .left .fenxiang,
