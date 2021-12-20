@@ -159,10 +159,11 @@
  }
 
  // 我的购物车
- // let goodsNum=_$('.shop_car .num');
- // let goods=JSON.parse(localStorage.getItem('cart'));
- // let goods=localStorage.getItem('cart');
- // console.log(goods);
+ let goodsNum=_$('.shop_car .num');
+ let goods=JSON.parse(localStorage.getItem('cart'));
+//  let goods=localStorage.getItem('cart');
+
+//  console.log(goods);
 
  // 为你推荐tab切换
  let label = document.querySelectorAll('.for_you_menu .for_tab_index');
@@ -186,7 +187,6 @@
          item.style.display = 'none';
      })
  }
-
 
 
 

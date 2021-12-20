@@ -119,15 +119,23 @@ for(let i=0;i<hov.length;i++){
 }
 
 let label = document.querySelectorAll('.nav_tab_list .nav_tab_item');
- let content = document.querySelectorAll('.item_menu .row');
+ let content = document.querySelectorAll('.nav_tab_item .item_tab_msg');
+ let firstBtn=document.querySelector('.w1 .nav_total .red_bg');
+ console.log(firstBtn);
+ let allContent=document.querySelector('.item_toatl_msg')
  // 鼠标移入tab栏，显示对应子tab栏内容
  for(let i=0;i<label.length;i++){
-    label[i].onclick = function(){
+    label[i].onmouseenter = function(){
         clearName();
         content[i].style.display = 'block';
     }
  }
-
+ firstBtn.onmouseenter=function(){
+     allContent.style.display='block'
+ }
+ firstBtn.onmouseleave=function(){
+    allContent.style.display='none'
+}
  function clearName() {
      content.forEach(item => {
          item.style.display = 'none';

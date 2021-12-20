@@ -77,6 +77,10 @@
   color: #e1251a;
   font-weight: 700;
 }
+.color{
+  color:#e1251a;
+  font-weight: 700;
+}
 .login .login_box .login_tab h2 {
   line-height: 55px;
   text-align: center;

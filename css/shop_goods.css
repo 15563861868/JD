@@ -389,9 +389,11 @@
 }
 .nav_tab .item_toatl_msg {
   display: none;
-  z-index: 9;
+  z-index: 999;
   width: 1000px;
   height: 500px;
+  position: absolute;
+  top: 0px;
 }
 .nav_tab .total {
   height: 40px;
@@ -466,9 +468,9 @@
   display: none;
   position: absolute;
   top: 280px;
-  left: 0;
+  left: -300px;
   background-color: #fff;
-  z-index: 9;
+  z-index: 999;
 }
 .nav_tab .w_phone {
   width: 1200px;
