@@ -247,3 +247,26 @@ class Cart {
     }
 }
 new Cart;
+
+let loginned=document.querySelector('.user_login');
+let regis=document.querySelector('.register');
+let str=localStorage.getItem('login');
+str=JSON.parse(str);
+if(str){
+    loginned.innerHTML=str;
+    regis.innerHTML='&nbsp;&nbsp;退出';
+}
+regis.onclick=function(){
+if(regis.innerHTML=='&nbsp;&nbsp;免费注册'){
+    window.location.href='register.html';
+    }else if(regis.innerHTML=='&nbsp;&nbsp;退出'){
+        regis.innerHTML='&nbsp;&nbsp;免费注册';
+        loginned.innerHTML='你好，请登录';
+        localStorage.removeItem('login');
+}
+}
+loginned.onclick=function(){
+if(loginned.innerHTML=='你好，请登录'){
+    window.location.href='login.html';
+    }
+}

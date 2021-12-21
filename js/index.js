@@ -1,20 +1,33 @@
 let loginned=document.querySelector('.user_login');
 let regis=document.querySelector('.register');
 let str=localStorage.getItem('login');
+str=JSON.parse(str);
 if(str){
     loginned.innerHTML=str;
-    regis.innerHTML='已登录';
+    regis.innerHTML='&nbsp;&nbsp;退出';
 }
- 
- 
- 
- 
+regis.onclick=function(){
+if(regis.innerHTML=='&nbsp;&nbsp;免费注册'){
+    window.location.href='register.html';
+    }else if(regis.innerHTML=='&nbsp;&nbsp;退出'){
+        regis.innerHTML='&nbsp;&nbsp;免费注册';
+        loginned.innerHTML='你好，请登录';
+        localStorage.removeItem('login');
+}
+}
+loginned.onclick=function(){
+if(loginned.innerHTML=='你好，请登录'){
+    window.location.href='login.html';
+    }
+}
+
  // console.log(this._$('.ad_618 .close_ad'));4
  _$('.ad_618 .close_ad').onclick = () => {
      _$('.ad_618').classList.add('hide');
  }
 
  // 轮播
+ let show = _$('.content .show');
  let timer = '';
  timer = setInterval(function () {
      let show = _$('.content .show');
@@ -51,7 +64,7 @@ if(str){
          active();
      }, 2000);
  }
- let show = _$('.content .show');
+
  let lis = $$('.content li');
 
  let one = lis[0];
@@ -106,9 +119,19 @@ if(str){
      lis[k].setAttribute('id', k);
  }
  let btns = $$('.dotted li')
- btns[0].className = 'active';
+//  btns[0].className = 'active';
+//  for(let i=0;i<btns.length;i++){
+//      picShow();
+//      btns[i].onclick=function(){
+//          lis[i].className='show';
+//      }
+//  }
  //  console.log(btns);
-
+// function picShow(){
+//     lis.forEach(item=>{
+//         item.className = '';
+//     })
+// }
  function active() {
      btns.forEach(item => {
          item.className = '';

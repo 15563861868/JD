@@ -12,6 +12,29 @@ let btn = document.querySelectorAll('.preview_list .list_item li img');
 let li = document.querySelectorAll('.preview_list .list_item .list_item_menu li')
 // let ul=document.querySelector('.preview_list .list_item');
 
+let loginned=document.querySelector('.user_login');
+let regis=document.querySelector('.register');
+let str=localStorage.getItem('login');
+str=JSON.parse(str);
+if(str){
+    loginned.innerHTML=str;
+    regis.innerHTML='&nbsp;&nbsp;退出';
+}
+regis.onclick=function(){
+if(regis.innerHTML=='&nbsp;&nbsp;免费注册'){
+    window.location.href='register.html';
+    }else if(regis.innerHTML=='&nbsp;&nbsp;退出'){
+        regis.innerHTML='&nbsp;&nbsp;免费注册';
+        loginned.innerHTML='你好，请登录';
+        localStorage.removeItem('login');
+}
+}
+loginned.onclick=function(){
+if(loginned.innerHTML=='你好，请登录'){
+    window.location.href='login.html';
+    }
+}
+
 small.onmouseover = () => {
     mask.style.display = 'block';
     big.style.display = 'block';
