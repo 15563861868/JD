@@ -111,7 +111,7 @@ class Cart {
                     let onecheck = item.parentNode.parentNode;
                     totalNum += (onecheck.querySelector('.p-num .quantity-form .itxt').value - 0);
                     totalPrice += (onecheck.querySelector('.p-sum .money').innerHTML - 0);
-                    console.log(typeof totalPrice);
+                    // console.log(typeof totalPrice);
                 }
             })
         }

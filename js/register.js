@@ -3,12 +3,14 @@ let userName=document.querySelector('.username');
 let pwd=document.querySelector('.pwd');
 let confirm1=document.querySelector('.true');
 let mail=document.querySelector('.email');
-let regis=document.querySelector('form>button');
+let regis=document.querySelector('form>button>a');
+let input=document.querySelectorAll('input');
 let tip1=document.querySelector('.tip1');
-console.log(tip1);
+// console.log(tip1);
 let tip2=document.querySelector('.tip2');
 let tip3=document.querySelector('.tip3');
 let tip4=document.querySelector('.tip4');
+let tip=document.querySelectorAll('.tip')
 // let exist=document.querySelector('.existInput')
 
 // let obj={};
@@ -34,9 +36,9 @@ function judge(){
                 console.log(123);
                 tip1.innerHTML='用户名已存在';
             }
-            // }else{
-            //     tip1.innerHTML='用户名可用';
-            // }
+            else{
+                tip1.innerHTML='用户名可用';
+            }
     }
 }
 pwd.onblur=function(){
@@ -70,7 +72,8 @@ mail.onblur=function(){
     }
 }
 regis.onclick=function(){
-    // if(!tip1=='用户名可用'&&!tip2=='密码可用'&&!tip3=='密码一致'&&!tip4=='邮箱地址错误'&&!tip4=='邮箱地址不能为空') return;
+    if(tip1.innerHTML=='用户名可用'&&tip2.innerHTML=='密码可用'&&tip3.innerHTML=='密码一致'&&tip4.innerHTML=='邮箱地址正确'){
+    window.location.href='login.html';
     let users=localStorage.getItem('users');
     if(!users){
     let obj={};
@@ -80,5 +83,14 @@ regis.onclick=function(){
         let obj=JSON.parse(users);
         obj[userName.value]=[pwd.value,mail.value];
         localStorage.setItem('users',JSON.stringify(obj));
+        }
+    }else{
+        return;
     }
-}
+
+    input.forEach(item=>{
+        item.value='';
+    })
+    }
+
+  

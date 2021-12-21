@@ -43,6 +43,15 @@ for (let k = 0; k < li.length; k++) {
     }
 }
 
+let goodsNum=document.querySelector('.shop_car .num');
+ let goods=localStorage.getItem('cart');
+ goods=JSON.parse(goods);
+ let newIndex=0;
+ for(let i in goods){
+     newIndex++;
+ }
+//  console.log(newIndex);
+ goodsNum.innerHTML=newIndex;
 
 // console.log(pic);
 small.onmousemove = (e) => {

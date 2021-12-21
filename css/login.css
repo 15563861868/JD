@@ -125,7 +125,7 @@
 .login .login_box .login_tab_item .saoma .code_img img {
   margin: 11.5px;
 }
-.login .login_box .login_tab_item .saoma .phone_img {
+.login .login_box .login_tab_item .saoma .phone_img { 
   display: none;
   margin-left: 10px;
   float: left;
@@ -191,9 +191,15 @@
 }
 .login .login_box .login_tab_item .zhanghu .password_icon {
   position: absolute;
-  top: 89px;
+  top: 117px;
   left: 20px;
   background: url(../images/login/pwd-icons-new.png) no-repeat -47px 0;
+}
+.login .login_box .login_tab_item .zhanghu .sign1,
+.login .login_box .login_tab_item .zhanghu .sign2{
+  padding-left: 30px;
+  margin-top: 10px;
+  color: orange;
 }
 .login .login_box .login_tab_item .zhanghu .forget_passeord {
   float: right;
@@ -207,6 +213,10 @@
   background-color: #e85356;
   color: #fff;
   font-size: 20px;
+}
+.login .login_box .login_tab_item .zhanghu button #login{
+  color: #fff;
+  text-decoration: none;
 }
 .login .login_box .bot {
   height: 50px;

@@ -1,3 +1,14 @@
+let loginned=document.querySelector('.user_login');
+let regis=document.querySelector('.register');
+let str=localStorage.getItem('login');
+if(str){
+    loginned.innerHTML=str;
+    regis.innerHTML='已登录';
+}
+ 
+ 
+ 
+ 
  // console.log(this._$('.ad_618 .close_ad'));4
  _$('.ad_618 .close_ad').onclick = () => {
      _$('.ad_618').classList.add('hide');
@@ -14,7 +25,7 @@
      } else {
          num = 0;
          lis.forEach(item => {
-             item.className = ''
+             item.className = '';
          })
          one.className = 'show';
      }
@@ -160,10 +171,16 @@
 
  // 我的购物车
  let goodsNum=_$('.shop_car .num');
- let goods=JSON.parse(localStorage.getItem('cart'));
-//  let goods=localStorage.getItem('cart');
+ let goods=localStorage.getItem('cart');
+ goods=JSON.parse(goods);
+ let newIndex=0;
+ for(let i in goods){
+     newIndex++;
+ }
+//  console.log(newIndex);
+ goodsNum.innerHTML=newIndex;
 
-//  console.log(goods);
+
 
  // 为你推荐tab切换
  let label = document.querySelectorAll('.for_you_menu .for_tab_index');

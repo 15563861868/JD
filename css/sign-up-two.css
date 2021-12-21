@@ -137,6 +137,10 @@ main>form button{
 	background:#e2231a;
 	color: #fff;
 }
+main>form button a{
+	color: #fff;
+	text-decoration: none;
+}
 form{
 	margin-top: 24px;
 	
