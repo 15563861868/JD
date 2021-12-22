@@ -1,6 +1,6 @@
 class Goods {
     constructor() {
-        this.getGoods()
+        this.getGoods();
     }
     async getGoods() {
         let data = await axios.get({
@@ -26,8 +26,11 @@ class Goods {
 
         </li>`;
         })
-        this.shop = document.querySelector('.for_you_goodslist');
-        this.shop.innerHTML = html;
+        this.shop = document.querySelectorAll('.for_you_goodslist');
+        this.shop.forEach(item=>{
+            item.innerHTML=html;
+        })
+        // this.shop.innerHTML = html;
     }
     static addCart(id, num) {
         let cartGoods = localStorage.getItem('cart')

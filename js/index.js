@@ -13,6 +13,8 @@ if(regis.innerHTML=='&nbsp;&nbsp;免费注册'){
         regis.innerHTML='&nbsp;&nbsp;免费注册';
         loginned.innerHTML='你好，请登录';
         localStorage.removeItem('login');
+        localStorage.removeItem('cart');
+        location.reload();
 }
 }
 loginned.onclick=function(){
@@ -166,7 +168,7 @@ if(loginned.innerHTML=='你好，请登录'){
      return num < 10 ? num = '0' + num : num
  }
 
- // 秒杀手动轮播
+ // 秒杀轮播
  let ul = _$('.miaosha_content');
  let col = $$('.miaosha_content .col');
  // console.log(col);
@@ -191,11 +193,23 @@ if(loginned.innerHTML=='你好，请登录'){
          ul.style.left = -(800 * i) + 'px';
      }
  }
+//  let timer = '';
+//  timer = setInterval(function () {
+//     if (i < col.length - 1) {
+//         i += 1;
+//         ul.style.left = -(800 * i) + 'px';
+//     } else if (i == col.length - 1) {
+//         i = 0;
+//         ul.style.left = -(800 * i) + 'px';
+//     }
+//     // active();
+// }, 2000);
 
  // 我的购物车
  let goodsNum=_$('.shop_car .num');
  let goods=localStorage.getItem('cart');
  goods=JSON.parse(goods);
+//  console.log(goods.length);
  let newIndex=0;
  for(let i in goods){
      newIndex++;

@@ -27,6 +27,8 @@ if(regis.innerHTML=='&nbsp;&nbsp;免费注册'){
         regis.innerHTML='&nbsp;&nbsp;免费注册';
         loginned.innerHTML='你好，请登录';
         localStorage.removeItem('login');
+        localStorage.removeItem('cart');
+        location.reload();
 }
 }
 loginned.onclick=function(){
